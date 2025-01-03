@@ -1,0 +1,22 @@
+name: test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    container: ryuichiueda/ubuntu22.04-ros2:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y python3-pip
+          pip3 install requests
+      - name: build and test
+        env:
+          N2YO_API_KEY: ${{ secrets.N2YO_API_KEY }}
+        run: |
+          rsync -av ./ /root/ros2_ws/src/satellite_position/
+          cd /root/ros2_ws
+          bash -xv ./src/satellite_position/test/test.bash /root
