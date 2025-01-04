@@ -9,6 +9,7 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-timeout 10 ros2 run satellite_position fetch_position > /tmp/log
-cat /tmp/log |
+timeout 10 ros2 launch satellite_position test.launch.py > /tmp/satellite_position.log
+
+cat /tmp/satellite_position.log |
 grep 'Published satellite position'
