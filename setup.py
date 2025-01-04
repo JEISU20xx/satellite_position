@@ -24,7 +24,6 @@ setup(
     entry_points={
         'console_scripts': [
             'fetch_position = satellite_position.fetch_position:main',
-            'listen_position = satellite_position.listen_position:main',
         ],
     },
 )
