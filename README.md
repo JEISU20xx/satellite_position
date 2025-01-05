@@ -1,7 +1,15 @@
 # ROS2 Satellite Position Publisher
 [![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)
-## 概要
-- 衛星の位置情報を取得し、topicとしてパブリッシュするためのROS2のパッケージ
+## fetch_position.py
+- 衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノード
+
+### テスト用コード
+- receive_position.py
+  - fetch_position.pyが正しく動作しているか確認する
+    - topic`satellite_position`をサブスクライブする
+- test.launch.py
+  - fetch_position.pyをテストするために実行するlaunch
+    - fetch_position.pyとreceive_position.pyを実行し、衛星の位置情報の取得とパブリッシュ、サブスクライブを同時に行う
 
 ## テスト環境
 - Ubuntu 22.04
