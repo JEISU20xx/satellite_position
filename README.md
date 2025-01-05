@@ -4,9 +4,9 @@
 - 衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノード
 ### 実行準備
 1\. [N2YO.com](https://www.n2yo.com/)でアカウントを作成し、APIキーを取得してください。   
-2\. fetch_posiiton.pyの17行目の`os.getenv('N2YO_API_KEY')`を取得したAPIキーに変更するか、`~/.bashrc`に`export N2YO_API_KEY='取得したAPIキー'`と入力し保存してくださいてください。  
-3\. fetch_position.pyの18行目の`25544`を取得したい衛星の衛星カタログ番号(NORAD ID)に変更してください。  
-(25544は国際宇宙ステーションの衛星カタログ番号です。)
+2\. fetch_posiiton.pyの17行目の`os.getenv('N2YO_API_KEY')`を取得したAPIキーに変更するか、`~/.bashrc`に`export N2YO_API_KEY='取得したAPIキー'`を追加してください。  
+3\. fetch_position.pyの18行目の`25544`を取得したい衛星のNORAD IDに変更してください。  
+(25544は国際宇宙ステーションのNORAD IDです。)
 
 ### 実行し別端末で`$ ros2 topic echo satellite_position`をした例
 ```
@@ -24,7 +24,7 @@ data: 'Lat: -14.21384991, Lon: 129.03749002, Alt: 34364.65'
   - fetch_position.pyが正しく動作しているか確認する
     - topic`satellite_position`をサブスクライブする
 - test.launch.py
-  - fetch_position.pyをテストするために実行するlaunch
+  - fetch_position.pyをテストするためのlaunch
     - fetch_position.pyとreceive_position.pyを実行し、衛星の位置情報の取得とパブリッシュ、サブスクライブを同時に行う
 
 ## テスト環境
