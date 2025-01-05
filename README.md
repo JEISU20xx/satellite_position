@@ -1,7 +1,7 @@
 # ROS2 Satellite Position Publisher
 [![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)
 ## fetch_position.py
-- 衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノード
+- 衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノードです。
 - 位置情報はLat(緯度)、Lon(経度)、Alt(高度)で表示されます。
 ### 実行準備
 1\. [N2YO.com](https://www.n2yo.com/)でアカウントを作成し、APIキーを取得してください。   
@@ -9,7 +9,7 @@
 3\. fetch_position.pyの18行目の`25544`を取得したい衛星のNORAD IDに変更してください。  
 (25544は国際宇宙ステーションのNORAD IDです。)
 
-### 端末1でfetch_position.pyを実行し、別の端末2で`$ ros2 topic echo satellite_position`をした例
+### 端末1でfetch_position.pyを実行し、別の端末2でtopic確認した例
 端末1
 ```
 $ ros2 run satellite_position fetch_position
@@ -28,11 +28,11 @@ data: 'Lat: -14.21384991, Lon: 129.03749002, Alt: 34364.65'
 ```
 ### テスト用コード
 - receive_position.py
-  - fetch_position.pyが正しく動作しているか確認する
-    - topic`satellite_position`をサブスクライブする
+  - fetch_position.pyが正しく動作しているか確認します。
+    - topic`satellite_position`をサブスクライブします。
 - test.launch.py
-  - fetch_position.pyをテストするためのlaunch
-    - fetch_position.pyとreceive_position.pyを実行し、衛星の位置情報の取得とパブリッシュ、サブスクライブを同時に行う
+  - fetch_position.pyをテストするためのlaunchです。
+    - fetch_position.pyとreceive_position.pyを実行し、衛星の位置情報の取得とパブリッシュ、サブスクライブを同時に行います。
 
 ## テスト環境
 - Ubuntu 22.04
