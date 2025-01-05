@@ -10,4 +10,11 @@ def generate_launch_description():
         package = 'satellite_position',
         executable = 'fetch_position',
     )
-    return launch.LaunchDescription([fetch_position])
+
+    receive_position = launch_ros.actions.Node(
+        package = 'satellite_position',
+        executable = 'receive_position',
+        output = 'screen',
+    )
+
+    return launch.LaunchDescription([fetch_position,receive_position])

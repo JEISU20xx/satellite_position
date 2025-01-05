@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xv
 
 # SPDX-FileCopyrightText: 2025 Junya Wada
 # SPDX-License-Identifier: BSD-3-Clause
@@ -11,5 +11,4 @@ colcon build
 source $dir/.bashrc
 timeout 10 ros2 launch satellite_position test.launch.py > /tmp/satellite_position.log
 
-cat /tmp/satellite_position.log |
-grep 'Published satellite position'
+cat /tmp/satellite_position.log | grep 'Lon'
