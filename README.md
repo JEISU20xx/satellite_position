@@ -7,7 +7,7 @@
 1\. [N2YO.com](https://www.n2yo.com/)でアカウントを作成し、APIキーを取得してください。   
 2\. fetch_posiiton.pyの17行目の`os.getenv('N2YO_API_KEY')`を取得したAPIキーに変更するか、`~/.bashrc`に`export N2YO_API_KEY='取得したAPIキー'`を追加してください。  
 3\. fetch_position.pyの18行目の`25544`を取得したい衛星のNORAD IDに変更してください。  
-(25544は国際宇宙ステーションのNORAD IDです。)
+（25544は国際宇宙ステーションのNORAD IDです。）
 
 ### 端末1でfetch_position.pyを実行し、別の端末2でtopic確認した例
 端末1
