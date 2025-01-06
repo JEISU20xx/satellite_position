@@ -30,8 +30,7 @@ data: 'Lat: -14.20007997, Lon: 129.04026218, Alt: 34365.72'
 - Ubuntu 22.04
 
 ## ライセンス
-- このリポジトリはBSD3条項ライセンスの下で公開されています。
-- 詳細は[LICENSE](https://github.com/JEISU20xx/satellite_position/blob/master/LICENSE)を確認してください。
-
-## 著作権
+- このリポジトリは3条項BSDライセンスの下で公開されています。
+- 詳細は[LICENSE](https://github.com/JEISU20xx/satellite_position/blob/master/LICENSE)を確認してください。  
+  
 © 2025 Junya Wada
