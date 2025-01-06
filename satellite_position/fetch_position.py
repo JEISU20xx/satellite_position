@@ -27,12 +27,6 @@ class SatellitePositionNode(Node):
                 position = positions[0]
                 msg = String()
                 msg.data = f"Lat: {position['satlatitude']}, Lon: {position['satlongitude']}, Alt: {position['sataltitude']}"
-                self.pub.publish(msg)
-                self.get_logger().info(f'Published satellite position: {msg.data}')
-            else:
-                self.get_logger().error('No position data available')
-        else:
-            self.get_logger().error('Failed to fetch data from N2YO API')
 
 def main():
     rclpy.init()
