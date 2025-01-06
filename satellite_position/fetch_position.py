@@ -28,7 +28,7 @@ class SatellitePositionNode(Node):
                 msg = String()
                 msg.data = f"Lat: {position['satlatitude']}, Lon: {position['satlongitude']}, Alt: {position['sataltitude']}"
                 self. pub.publish(msg)
-    def main():
+def main():
     rclpy.init()
     node = SatellitePositionNode()
     rclpy.spin(node)
