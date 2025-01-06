@@ -15,7 +15,6 @@ class ListenPositionNode(Node):
             'satellite_position',
             self.listener_callback,
             10)
-        self.subscription
 
     def listener_callback(self, msg):
         self.get_logger().info(f'Received satellite position: {msg.data}')
