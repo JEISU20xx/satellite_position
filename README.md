@@ -1,7 +1,7 @@
-# ROS2衛星位置取得パブリッシャ
+# ROS2 衛星位置取得公開パッケージ
 [![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)  
 ## パッケージ概要
-このROS2パッケージには、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、指定された衛星の現在位置情報を取得し、トピックとしてパブリッシュするノードが実装されています。
+[N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置データを取得し、トピックにパブリッシュするROS2のパッケージです。
 ## ノード概要
 ### `fetch_position`ノード
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
@@ -12,10 +12,10 @@
 |衛星の地球上の経度（Longitude）|
 |衛星の高度（Altitude）|
 
-- 取得した情報は`satellite_position`トピックとしてパブリッシュされます。
+- 取得したデータを`satellite_position`というトピックにパブリッシュします。
 #### `satellite_position`トピック
 - メッセージ型：`String`
-- 以下の形式でデータをパブリッシュします：
+- 以下の形式でデータが公開されます：
 ```
 Lat: XX.XXXX, Lon: YY.YYYY, Alt: ZZ.ZZZZ
 ```
@@ -26,7 +26,6 @@ Lat: XX.XXXX, Lon: YY.YYYY, Alt: ZZ.ZZZZ
 - **ROS2 version**：humble
 ## 依存関係
 このパッケージを動かすために必要なライブラリ：
-- `rclpy`: ROS2とともにインストールされているはずです。
 - `requests`: HTTPリクエストを処理するために必要です。  
 インストール方法：
 ```
