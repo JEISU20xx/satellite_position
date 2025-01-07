@@ -3,10 +3,9 @@
 ## パッケージ概要
 このROS2パッケージは、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、特定の衛星の現在位置情報（緯度、経度、高度）を取得し、ROS2のトピックとしてパブリッシュするノードを提供します。
 ## ノード概要
-### `fetch_position`
+### `fetch_position`ノード
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得し、他のノードが利用できるようにトピック`satellite_position`としてパブリッシュします。
-## トピック概要
-### `satellite_position`
+#### `satellite_position`ノード
 - メッセージ型：`String`
 - 以下の形式でデータをパブリッシュします：
 ```
