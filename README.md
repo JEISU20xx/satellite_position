@@ -55,7 +55,22 @@ $ echo "export N2YO_API_KEY='取得したAPIキー'" >> ~/.bashrc
 $ source ~/.bashrc
 ```
 ### 2\. NORAD IDの設定
-- `satellite_position/fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーション（ISS）のIDである`25544`です。
+- `satellite_position/fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーション（ISS）のIDである`25544`です。  
+以下はNORAD IDの一例です。
+
+|NORAD ID |Satellite Name         |
+|:-------:|:---------------------:|
+|43032    |Himawari-8             |
+|43013    |Michibiki-2            |
+|43168    |Michibiki-3            |
+|42965    |ERG Arase              |
+|43613    |Michibiki-4            |
+|40025    |GOSAT Ibuki            |
+|37838    |H-II Transfer Vehicle-2|
+|41897    |Himawari-9             |
+|39239    |Hayabusa-2             |
+|40930    |Kounotori-5            |
+
 ## 使用方法
 ### ノードの起動とデータの確認
 - **fetch_positionノードの実行**  
