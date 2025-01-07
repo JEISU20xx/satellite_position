@@ -1,7 +1,7 @@
 # ROS2衛星位置取得パブリッシャ
 [![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)  
 ## パッケージ概要
-このROS2パッケージは、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、指定された衛星の現在位置情報（緯度、経度、高度）を取得し、トピックとしてパブリッシュするノードを提供します。
+このROS2パッケージは、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、指定された衛星の現在位置情報を取得し、トピックとしてパブリッシュするノードを提供します。
 ## ノード概要
 ### `fetch_position`ノード
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
