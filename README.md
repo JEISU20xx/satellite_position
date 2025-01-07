@@ -1,5 +1,6 @@
-# ROS2 Satellite Position Publisher
-[![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)  ## 概要
+# ROS2衛星位置情報パブリッシャー
+[![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)  
+## 概要
 このROS2パッケージは、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、特定の衛星の現在位置情報（緯度、経度、高度）を取得し、ROS2のトピックとして公開します。
 ## 動作環境
 このパッケージは以下の環境で動作が確認済みです。
