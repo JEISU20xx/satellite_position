@@ -36,26 +36,23 @@ $ echo "export N2YO_API_KEY='取得したAPIキー'" >> ~/.bashrc
 $ source ~/.bashrc
 ```
 2\. NORAD IDの設定
-- `fetch_position.py`の18行目で追跡したい衛星のNOARD IDを指定してください。デフォルトは国際宇宙ステーション（ISS）のIDである`25544`です。
+- `satellite_position/fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーション（ISS）のIDである`25544`です。
+## 使用方法
+ノードの起動とデータの確認
+- **fetch_positionノードの実行**  
+端末1で以下を実行：
+```
+$ ros2 run satellite_position fetch_position
+```
+- **データの確認**  
+端末2で以下を実行し、トピックのデータを表示：
+```
+$ ros2 topic echo satellite_position
+```
 ## fetch_position.py
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用し、衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノードです。
 - 位置情報はLat（緯度）、Lon（経度）、Alt（高度）で表示されます。
-
-### 端末1でfetch_position.pyを実行し、別の端末2でtopic確認した例
-端末1
-```
-$ ros2 run satellite_position fetch_position
-
-```
-端末2
-```
-$ ros2 topic echo satellite_position
-data: 'Lat: -14.18630938, Lon: 129.04303749, Alt: 34366.78'
----
-data: 'Lat: -14.20007997, Lon: 129.04026218, Alt: 34365.72'
----
-```
-### テスト用コード
+## テスト用コード
 - receive_position.py
 - test.launch.py
 ## ライセンス
