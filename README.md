@@ -3,10 +3,11 @@
 ## パッケージ概要
 このROS2パッケージは、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、指定された衛星の現在位置情報（緯度、経度、高度）を取得し、トピックとしてパブリッシュするノードを提供します。
 ## ノード概要
-### fetch_position
-- [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得し、トピック**satellite_position**としてパブリッシュします。
-#### satellite_positionトピック
-- メッセージ型：String
+### `fetch_position`ノード
+- [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
+- 取得した情報はトピック`satellite_position`にパブリッシュされます。
+#### `satellite_position`トピック
+- メッセージ型：`String`
 - 以下の形式でデータをパブリッシュします：
 ```
 Lat: XX.XXXX, Lon: YY.YYYY, Alt: ZZ.ZZZZ
@@ -47,16 +48,16 @@ satellite_position/
     `-- test_pep257.py
 ```
 ## セットアップ
-### 1\. APIキーの取得と設定
+### APIキーの取得と設定
 - [N2YO.com](https://www.n2yo.com/)でアカウントを作成し、APIキーを取得します。
 - 環境変数を設定：
 ```
 $ echo "export N2YO_API_KEY='取得したAPIキー'" >> ~/.bashrc
 $ source ~/.bashrc
 ```
-### 2\. NORAD IDの設定
+### NORAD IDの設定
 - `satellite_position/fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーション（ISS）のIDである`25544`です。  
-以下はNORAD IDの一例です。
+- 以下はNORAD IDの一例です。
 
 | Satellite Name          | NORAD ID |
 |-------------------------|----------|
@@ -65,11 +66,6 @@ $ source ~/.bashrc
 | GOSAT Ibuki             | 40025    |
 | Kounotori-5             | 40930    |
 | Himawari-9              | 41897    |
-| ERG Arase               | 42965    |
-| Michibiki-2             | 43013    |
-| Himawari-8              | 43032    |
-| Michibiki-3             | 43168    |
-| Michibiki-4             | 43613    |
 
 ## 使用方法
 ### ノードの起動とデータの確認
@@ -94,8 +90,8 @@ data: 'Lat: 30.94521302, Lon: 143.89767157, Alt: 38201.92'
 ---
 ```
 ## テスト用コード
-- receive_position.py
-- test.launch.py
+- `receive_position.py`
+- `test.launch.py`
 ## ライセンス
 - このリポジトリは3条項BSDライセンスの下で公開されています。
 - 詳細は[LICENSE](https://github.com/JEISU20xx/satellite_position/blob/master/LICENSE)を確認してください。  
