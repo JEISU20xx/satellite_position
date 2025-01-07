@@ -5,7 +5,7 @@
 ## ノード概要
 ### `fetch_position`ノード
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得し、他のノードが利用できるようにトピック`satellite_position`としてパブリッシュします。
-#### `satellite_position`ノード
+#### `satellite_position`トピック
 - メッセージ型：`String`
 - 以下の形式でデータをパブリッシュします：
 ```
