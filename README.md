@@ -49,8 +49,9 @@ $ ros2 run satellite_position fetch_position
 ```
 $ ros2 topic echo satellite_position
 ```
-## fetch_position.py
+## ノードについて
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用し、衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノードです。
+## トピックについて
 - 位置情報はLat（緯度）、Lon（経度）、Alt（高度）で表示されます。
 ## テスト用コード
 - receive_position.py
