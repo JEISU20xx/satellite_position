@@ -5,6 +5,13 @@
 ## ノード概要
 ### `fetch_position`ノード
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
+
+|取得するデータ|
+|-----------------------------|
+|衛星の地球上の緯度（Latitude）|
+|衛星の地球上の経度（Longitude）|
+|衛星の高度（Altitude）|
+
 - 取得した情報はトピック`satellite_position`にパブリッシュされます。
 #### `satellite_position`トピック
 - メッセージ型：`String`
