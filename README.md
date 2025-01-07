@@ -6,6 +6,14 @@
 このパッケージは以下の環境で動作が確認済みです。
 - **OS**：Ubuntu 22.04 LTS
 - **ROS2 version**：humble
+## 依存関係
+このパッケージを動かすために必要なライブラリ：
+- `rclpy`: ROS2とともにインストールされているはずです。
+- `requests`: HTTPリクエストを処理するために必要です。  
+インストール方法：
+```
+$ pip install requests
+```
 ## ディレクトリ構造
 ```
 satellite_position/
@@ -49,6 +57,16 @@ $ ros2 run satellite_position fetch_position
 端末2で以下を実行し、トピックのデータを表示：
 ```
 $ ros2 topic echo satellite_position
+```
+出力例：
+```
+$ ros2 topic echo satellite_position
+data: 'Lat: 30.96223248, Lon: 143.90078482, Alt: 38203.34'
+---
+data: 'Lat: 30.95372436, Lon: 143.89922961, Alt: 38202.63'
+---
+data: 'Lat: 30.94521302, Lon: 143.89767157, Alt: 38201.92'
+---
 ```
 ## ノードについて
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用し、衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノードです。
