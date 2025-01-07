@@ -1,12 +1,12 @@
-# ROS2衛星位置情報取得パブリッシャ
+# ROS2衛星位置取得パブリッシャ
 [![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)  
 ## パッケージ概要
 このROS2パッケージは、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、特定の衛星の現在位置情報（緯度、経度、高度）を取得し、トピックとしてパブリッシュするノードを提供します。
 ## ノード概要
-### `fetch_position`
+### fetch_position
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得し、他のノードが利用できるようにトピック`satellite_position`としてパブリッシュします。
-#### `satellite_position`トピック
-- メッセージ型：`String`
+#### satellite_positionトピック
+- メッセージ型：String
 - 以下の形式でデータをパブリッシュします：
 ```
 Lat: XX.XXXX, Lon: YY.YYYY, Alt: ZZ.ZZZZ
@@ -58,18 +58,18 @@ $ source ~/.bashrc
 - `satellite_position/fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーション（ISS）のIDである`25544`です。  
 以下はNORAD IDの一例です。
 
-|NORAD ID |Satellite Name         |
-|:-------:|:---------------------:|
-|43032    |Himawari-8             |
-|43013    |Michibiki-2            |
-|43168    |Michibiki-3            |
-|42965    |ERG Arase              |
-|43613    |Michibiki-4            |
-|40025    |GOSAT Ibuki            |
-|37838    |H-II Transfer Vehicle-2|
-|41897    |Himawari-9             |
-|39239    |Hayabusa-2             |
-|40930    |Kounotori-5            |
+| Satellite Name          | NORAD ID |
+|-------------------------|----------|
+| H-II Transfer Vehicle-2 | 37838    |
+| Hayabusa-2              | 39239    |
+| GOSAT Ibuki             | 40025    |
+| Kounotori-5             | 40930    |
+| Himawari-9              | 41897    |
+| ERG Arase               | 42965    |
+| Michibiki-2             | 43013    |
+| Himawari-8              | 43032    |
+| Michibiki-3             | 43168    |
+| Michibiki-4             | 43613    |
 
 ## 使用方法
 ### ノードの起動とデータの確認
