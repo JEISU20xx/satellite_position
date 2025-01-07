@@ -66,7 +66,7 @@ $ ros2 run satellite_position fetch_position
 ```
 $ ros2 topic echo satellite_position
 ```
-### 出力例：
+### 出力例
 ```
 $ ros2 topic echo satellite_position
 data: 'Lat: 30.96223248, Lon: 143.90078482, Alt: 38203.34'
