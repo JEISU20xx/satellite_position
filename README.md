@@ -2,6 +2,13 @@
 [![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)  
 ## 概要
 このROS2パッケージは、[N2YO.com](https://www.n2yo.com/)のAPIを利用して、特定の衛星の現在位置情報（緯度、経度、高度）を取得し、ROS2のトピックとして公開します。
+### ノードについて
+- [N2YO.com](https://www.n2yo.com/)のAPIを利用し、衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノードです。
+### トピックについて
+- 位置情報はLat（緯度）、Lon（経度）、Alt（高度）で表示されます。
+### テスト用コード
+- receive_position.py
+- test.launch.py
 ## 動作環境
 このパッケージは以下の環境で動作が確認済みです。
 - **OS**：Ubuntu 22.04 LTS
@@ -68,13 +75,6 @@ data: 'Lat: 30.95372436, Lon: 143.89922961, Alt: 38202.63'
 data: 'Lat: 30.94521302, Lon: 143.89767157, Alt: 38201.92'
 ---
 ```
-## ノードについて
-- [N2YO.com](https://www.n2yo.com/)のAPIを利用し、衛星の位置情報を取得し、topic`satellite_position`としてパブリッシュするノードです。
-## トピックについて
-- 位置情報はLat（緯度）、Lon（経度）、Alt（高度）で表示されます。
-## テスト用コード
-- receive_position.py
-- test.launch.py
 ## ライセンス
 - このリポジトリは3条項BSDライセンスの下で公開されています。
 - 詳細は[LICENSE](https://github.com/JEISU20xx/satellite_position/blob/master/LICENSE)を確認してください。  
