@@ -12,7 +12,7 @@
 |衛星の地球上の経度（Longitude）|
 |衛星の高度（Altitude）|
 
-- 取得した情報はトピック`satellite_position`にパブリッシュされます。
+- 取得した情報は`satellite_position`トピックにパブリッシュされます。
 #### `satellite_position`トピック
 - メッセージ型：`String`
 - 以下の形式でデータをパブリッシュします：
