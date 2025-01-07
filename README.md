@@ -45,17 +45,17 @@ satellite_position/
     `-- test_pep257.py
 ```
 ## セットアップ
-1\. APIキーの取得と設定
+### 1\. APIキーの取得と設定
 - [N2YO.com](https://www.n2yo.com/)でアカウントを作成し、APIキーを取得します。
 - 環境変数を設定：
 ```
 $ echo "export N2YO_API_KEY='取得したAPIキー'" >> ~/.bashrc
 $ source ~/.bashrc
 ```
-2\. NORAD IDの設定
+### 2\. NORAD IDの設定
 - `satellite_position/fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーション（ISS）のIDである`25544`です。
 ## 使用方法
-ノードの起動とデータの確認
+### ノードの起動とデータの確認
 - **fetch_positionノードの実行**  
 端末1で以下を実行：
 ```
@@ -66,7 +66,7 @@ $ ros2 run satellite_position fetch_position
 ```
 $ ros2 topic echo satellite_position
 ```
-出力例：
+### 出力例：
 ```
 $ ros2 topic echo satellite_position
 data: 'Lat: 30.96223248, Lon: 143.90078482, Alt: 38203.34'
