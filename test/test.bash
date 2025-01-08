@@ -11,4 +11,6 @@ colcon build
 source $dir/.bashrc
 timeout 10 ros2 launch satellite_position test.launch.py > /tmp/satellite_position.log
 
-cat /tmp/satellite_position.log | grep 'Lon'
+cat /tmp/satellite_position.log | grep 'Latitude'
+cat /tmp/satellite_position.log | grep 'Longitude'
+cat /tmp/satellite_position.log | grep 'Altitude'
