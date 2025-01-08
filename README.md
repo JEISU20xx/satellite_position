@@ -6,12 +6,14 @@
 ### `fetch_position`ノード
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
 - 取得したデータを、緯度、経度、高度に分けて３つのトピックにパブリッシュします。
-#### `satellite_latitude`トピック
-- 衛星の地球上の緯度
-#### `satellite_longitude`トピック
-- 衛星の地球上の経度
-#### `satellite_altitude`トピック
-- 衛星の高度（km）
+#### 公開されるトピックの概要
+- 公開されるトピックは以下の３つです。
+  - `satellite_latitude`トピック
+    - 衛星の地球上の緯度
+  - `satellite_longitude`トピック
+    - 衛星の地球上の経度
+  - `satellite_altitude`トピック
+    - 衛星の高度（単位はkm）
 
 
 ## 動作環境
@@ -56,7 +58,8 @@ $ echo "export N2YO_API_KEY='取得したAPIキー'" >> ~/.bashrc
 $ source ~/.bashrc
 ```
 ### NORAD IDの設定
-- `fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーションのID`25544`です。  
+- `fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。
+  - デフォルトは国際宇宙ステーションのID`25544`です。  
 - 以下はNORAD IDの一例です。
 
 | Satellite Name          | ID |
@@ -70,24 +73,23 @@ $ source ~/.bashrc
 ## 使用方法
 ### ノードの起動とデータの確認
 - **fetch_positionノードの実行**  
-端末1で以下を実行：
 ```
 $ ros2 run satellite_position fetch_position
 ```
 - **データの確認**  
-端末2で以下を実行し、トピックのデータを表示：
+別の端末で以下を実行し、トピックのデータを表示：
 ```
-$ ros2 topic echo satellite_position
+$ ros2 topic echo satellite_latitude
+```
+```
+$ ros2 topic echo satellite_longitude
+```
+```
+$ ros2 topic echo satellite_altitude
 ```
 ### 出力例
 ```
-$ ros2 topic echo satellite_position
-data: 'Lat: 30.96223248, Lon: 143.90078482, Alt: 38203.34'
----
-data: 'Lat: 30.95372436, Lon: 143.89922961, Alt: 38202.63'
----
-data: 'Lat: 30.94521302, Lon: 143.89767157, Alt: 38201.92'
----
+
 ```
 ## テスト用コード
 - `receive_position.py`
