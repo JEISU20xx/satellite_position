@@ -5,21 +5,15 @@
 ## ノード概要
 ### `fetch_position`ノード
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
+- 取得したデータを、緯度、経度、高度に分けて３つのトピックにパブリッシュします。
+#### `satellite_latitude`トピック
+- 衛星の地球上の緯度
+#### `satellite_longitude`トピック
+- 衛星の地球上の経度
+#### `satellite_altitude`トピック
+- 衛星の高度（km）
 
-|取得するデータ|
-|-----------------------------|
-|衛星の地球上の緯度（Latitude）|
-|衛星の地球上の経度（Longitude）|
-|衛星の高度（Altitude）|
 
-- 取得したデータを`satellite_position`というトピックにパブリッシュします。
-#### `satellite_position`トピック
-- メッセージ型：`String`
-- 以下の形式でデータが公開されます：
-```
-Lat: XX.XXXX, Lon: YY.YYYY, Alt: ZZ.ZZZZ
-```
-- Lat（緯度）、Lon（緯度）、Alt（高度）の3つのデータで、衛星の地球上の位置と高度を示します。
 ## 動作環境
 このパッケージは以下の環境で動作が確認済みです。
 - **OS**：Ubuntu 22.04 LTS
@@ -65,8 +59,8 @@ $ source ~/.bashrc
 - `fetch_position.py`の18行目で追跡したい衛星のNORAD IDを指定してください。デフォルトは国際宇宙ステーションのID`25544`です。  
 - 以下はNORAD IDの一例です。
 
-| Satellite Name          | NORAD ID |
-|-------------------------|----------|
+| Satellite Name          | ID |
+|-------------------------|---------|
 | H-II Transfer Vehicle-2 | 37838    |
 | Hayabusa-2              | 39239    |
 | GOSAT Ibuki             | 40025    |
