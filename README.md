@@ -77,7 +77,7 @@ $ source ~/.bashrc
 $ ros2 run satellite_position fetch_position
 ```
 - **データの確認**  
-別々の端末で以下をそれぞれ実行し、トピックのデータを表示：
+別々の端末で以下を実行し、トピックのデータを表示：
 ```
 $ ros2 topic echo satellite_latitude
 ```
