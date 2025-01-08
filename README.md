@@ -3,16 +3,16 @@
 ## パッケージ概要
 [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置データを取得し、トピックにパブリッシュするROS2のパッケージです。
 ## ノード概要
-### `fetch_position`ノード
+### `fetch_position`
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
 - 取得したデータを、緯度、経度、高度に分けて３つのトピックにパブリッシュします。
-#### 公開されるトピックの概要
+#### 公開されるトピック
 - 公開されるトピックは以下の３つです。
-  - `satellite_latitude`トピック
+  - `satellite_latitude`
     - 衛星の地球上の緯度
-  - `satellite_longitude`トピック
+  - `satellite_longitude`
     - 衛星の地球上の経度
-  - `satellite_altitude`トピック
+  - `satellite_altitude`
     - 衛星の高度（単位はkm）
 
 
@@ -72,12 +72,12 @@ $ source ~/.bashrc
 
 ## 使用方法
 ### ノードの起動とデータの確認
-- **fetch_positionノードの実行**  
+- **`fetch_position`の実行**  
 ```
 $ ros2 run satellite_position fetch_position
 ```
 - **データの確認**  
-別の端末で以下を実行し、トピックのデータを表示：
+別々の端末で以下をそれぞれ実行し、トピックのデータを表示：
 ```
 $ ros2 topic echo satellite_latitude
 ```
@@ -87,7 +87,7 @@ $ ros2 topic echo satellite_longitude
 ```
 $ ros2 topic echo satellite_altitude
 ```
-### 出力例
+#### 出力例
 ```
 
 ```
