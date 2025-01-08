@@ -5,7 +5,8 @@
 ## ノード概要
 ### `fetch_position`
 - [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置を取得します。
-- 取得したデータを、緯度、経度、高度に分けて３つのトピックにパブリッシュします。
+  - 衛星の位置情報は緯度、経度、高度の3つで表されます。 
+- 取得した3種のデータをそれぞれ`Float32`型でトピックにパブリッシュします。
 #### 公開されるトピック
 - 公開されるトピックは以下の３つです。
   - `satellite_latitude`
@@ -77,19 +78,44 @@ $ source ~/.bashrc
 $ ros2 run satellite_position fetch_position
 ```
 - **データの確認**  
-別々の端末で以下を実行し、トピックのデータを表示：
+別々の端末で以下を実行し、トピックのデータを表示します。
+  
+**緯度：**
 ```
 $ ros2 topic echo satellite_latitude
 ```
+**経度：**
 ```
 $ ros2 topic echo satellite_longitude
 ```
+**高度：**
 ```
 $ ros2 topic echo satellite_altitude
 ```
 #### 出力例
+**緯度：**
 ```
-
+$ ros2 topic echo satellite_latitude
+data: 6.521239757537842
+---
+data: 6.7754950523376465
+---
+```
+**経度：**
+```
+$ ros2 topic echo satellite_longitude
+data: 101.80941009521484
+---
+data: 101.99283599853516
+---
+```
+**高度：**
+```
+$ ros2 topic echo satellite_altitude
+data: 410.94000244140625
+---
+data: 410.9200134277344
+---
 ```
 ## テスト用コード
 - `receive_position.py`
