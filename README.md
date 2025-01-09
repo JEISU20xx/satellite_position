@@ -1,4 +1,4 @@
-# ROS2 衛星位置取得公開パッケージ
+# ROS 2 衛星位置取得公開パッケージ
 [![test](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml/badge.svg)](https://github.com/JEISU20xx/satellite_position/actions/workflows/test.yml)  
 ## パッケージ概要
 [N2YO.com](https://www.n2yo.com/)のAPIを利用して、5秒毎に指定された衛星の現在位置データを取得し、トピックにパブリッシュするROS2のパッケージです。
