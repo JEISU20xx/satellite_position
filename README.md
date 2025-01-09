@@ -28,28 +28,6 @@
 ```
 $ pip install requests
 ```
-## ディレクトリ構造
-```
-satellite_position/
-|-- LICENSE
-|-- README.md
-|-- launch/
-|   `-- test.launch.py
-|-- package.xml
-|-- resource/
-|   `-- satellite_position
-|-- satellite_position/
-|   |-- __init__.py
-|   |-- fetch_position.py
-|   `-- receive_position.py
-|-- setup.cfg
-|-- setup.py
-`-- test/
-    |-- test.bash
-    |-- test_copyright.py
-    |-- test_flake8.py
-    `-- test_pep257.py
-```
 ## セットアップ
 ### APIキーの取得と設定
 - [N2YO.com](https://www.n2yo.com/)でアカウントを作成し、APIキーを取得します。
